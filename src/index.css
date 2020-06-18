@@ -1,13 +1,243 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 15px;
+  font-family: 'Roboto', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.login-form {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.login-form form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 475px;
+}
+
+.login-form form span {
+  display: block;
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.login-form .input-wrapper {
+  margin: 25px 0;
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 6px;
+}
+
+.login-form .input-wrapper label {
+  font-weight: bold;
+}
+
+.login-form .input-wrapper label input {
+  margin-left: 20px;
+}
+
+.login-form form select {
+  height: 40px;
+  line-height: 40px;
+  margin-bottom: 30px;
+  padding: 0 15px
+}
+
+.login-form form .submit-btn {
+  height: 35px;
+}
+
+.navigation .nav-inner {
+  display: flex;
+  padding: 15px;
+  justify-content: center;
+}
+
+.navigation a {
+  display: block;
+  padding: 15px;
+  border: 1px solid gray;
+  background-color: azure;
+  margin: 0 20px;
+  text-decoration: none;
+  font-size: 16px;
+  color: black;
+  font-weight: 500;
+}
+
+.homepage-container {
+  padding: 15px;
+}
+
+.homepage-container .auth-user,
+.user-details {
+  display: inline-block;
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.homepage-container .toggle-polls {
+  display: flex;
+  justify-content: center;
+}
+
+.homepage-container .toggle-polls h2 {
+  margin: 15px 25px;
+  cursor: pointer;
+}
+
+.homepage-container.unanswered h2.answered {
+  opacity: 0.5;
+}
+
+.homepage-container.answered h2.unanswered {
+  opacity: 0.5;
+}
+
+.homepage-container.unanswered .answered-container {
+  display: none;
+}
+
+.homepage-container.answered .unanswered-container {
+  display: none;
+}
+
+.question-container {
+  margin: 35px;
+  padding: 15px;
+  border: 1px solid black;
+  box-shadow: rgba(0,0,0,0.75);
+  cursor: pointer;
+}
+
+.question-container ul li {
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 28px;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+.question-container .top-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.detail-container {
+  position: relative;
+  z-index: 1;
+}
+
+.detail-container .processing {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background:rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-container .processing h6 {
+  font-size: 60px;
+  color: red;
+}
+
+.detail-container .bottom-section {
+  padding: 35px;
+}
+
+.detail-container .bottom-section .detail-item {
+  position: relative;
+  border: 1px solid black;
+  padding: 100px 15px 15px 15px;
+  border-radius: 5px;
+}
+
+.detail-container .bottom-section .detail-item > div > div {
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+
+.detail-container .bottom-section .detail-item .votes {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px 10px 0 0;
+}
+
+.detail-container .bottom-section .detail-item button.active,
+.detail-container .bottom-section .answered-question button {
+  display: none;
+}
+
+.detail-container .bottom-section .detail-item span {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.detail-container .bottom-section .detail-item .total-votes {
+  margin-top: 30px;
+}
+
+.detail-container .bottom-section .detail-item .authed-answer {
+  margin-top: 10px;
+  font-weight: bold;
+  color: red;
+}
+
+.form-container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.form-container .new-question label {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container .new-question input {
+  margin: 35px 0;
+  height: 35px;
+  line-height: 35px;
+  padding: 0 15px;
+}
+
+.return-to-login {
+  margin-left: 25px;
+}
+
+.leaderboard {
+  padding: 15px;
+}
+
+.leaderboard .bottom-section > div {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 35px 0;
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 6px;
+}
+
+.leaderboard .bottom-section > div .profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.leaderboard .bottom-section > div span {
+  font-weight: bold;
+  color: gray;
 }
