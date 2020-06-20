@@ -1,9 +1,9 @@
-#Udacity: Would You Rather project
+# Udacity: Would You Rather project
 
 This is the second project in the Udacity React Nanodegree program. It is a Would You Rather game built with React and Redux.
 ---
 
-##Getting Started:
+## Getting Started:
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes:
 
@@ -12,17 +12,17 @@ These instructions will get you a copy of the project up and running on your loc
 2. ```npm start```
 ---
 
-##Prerequisites:
+## Prerequisites:
 
 Must have [Node.js](https://nodejs.org/en/) installed to run project locally.
 
-Built With:
+## Built With:
 
 [React](https://reactjs.org/)   
 
 [Redux](https://redux.js.org/)
 
-##App Structure:
+## App Structure:
 
 src > actions: contains all Redux actions
 
@@ -34,9 +34,9 @@ src > middleware: contains all middleware
 
 src > globals: contains backend data file and globally used functions
 
-##Authors:
+## Authors:
 
 Justin Booth
 
-@@License:
+## License:
 This project is licensed under the MIT License - see the LICENSE.md file for details
