@@ -1,7 +1,6 @@
 # Udacity: Would You Rather project
 
 This is the second project in the Udacity React Nanodegree program. It is a Would You Rather game built with React and Redux.
----
 
 ## Getting Started:
 
@@ -10,7 +9,6 @@ These instructions will get you a copy of the project up and running on your loc
 1. ```npm install```
 
 2. ```npm start```
----
 
 ## Prerequisites:
 
