@@ -1,4 +1,5 @@
 body {
+  position: relative;
   margin: 0;
   padding: 15px;
   font-family: 'Roboto', sans-serif;
@@ -240,4 +241,15 @@ body {
 .leaderboard .bottom-section > div span {
   font-weight: bold;
   color: gray;
+}
+
+.not-found {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 150px;
+  width: 100%;
+  padding: 25px;
+  z-index: 2;
+  background-color: white;
 }

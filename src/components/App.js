@@ -29,7 +29,7 @@ App.propTypes = {
   currentUserNotSet: PropTypes.bool.isRequired
 };
 
-function mapStateToProps ({ authedUser }) {
+function mapStateToProps ({authedUser}) {
   return {
     currentUserNotSet: authedUser === null
   }

@@ -3,12 +3,14 @@ import {connect} from "react-redux"
 import PropTypes from "prop-types"
 import User from "./User"
 import {submitAnswer} from "../globals/globalFunctions"
+import PageNotAvailable from "./PageNotAvailable"
 
 class QuestionDetails extends PureComponent{
 
   state = {
     selectedOption: "",
-    processingAnswer: false
+    processingAnswer: false,
+    invalidQuestion: false
   };
 
   submitSelection = (selection) => {
@@ -23,7 +25,10 @@ class QuestionDetails extends PureComponent{
   };
 
   render(){
-    const {question, author, answer, authedUser, totalVotes} = this.props;
+    const {question, author, answer, authedUser, invalidQuestion} = this.props;
+    if(invalidQuestion){
+      return <PageNotAvailable></PageNotAvailable>
+    }
     return(
       <div className="detail-container">
         {
@@ -107,24 +112,33 @@ function convertToPercentage(num){
   return Number.parseFloat(num).toFixed(2);
 };
 
-function mapStateToProps ({questions, authedUser, users}, {match}){
+function mapStateToProps({questions, authedUser, users}, {match}){
   const {id} = match.params;
   const question = questions[id];
-  const author = users[question.author];
-  const answers = users[authedUser].answers;
-  var answer = answers.hasOwnProperty(question.id) ? answers[question.id] : undefined;
-  let totalVotes = question.optionOne.votes.length + question.optionTwo.votes.length;
-  let optionOnePerc = convertToPercentage((question.optionOne.votes.length / totalVotes) * 100);
-  let optionTwoPerc = convertToPercentage((question.optionTwo.votes.length / totalVotes) * 100);
-  return {
-    question,
-    author,
-    answer,
-    totalVotes,
-    optionOnePerc,
-    optionTwoPerc,
-    users,
-    authedUser
+  let invalidQuestion = true;
+  if(question !== undefined){
+    invalidQuestion = false;
+    const author = users[question.author];
+    const answers = users[authedUser].answers;
+    var answer = answers.hasOwnProperty(question.id) ? answers[question.id] : undefined;
+    let totalVotes = question.optionOne.votes.length + question.optionTwo.votes.length;
+    let optionOnePerc = convertToPercentage((question.optionOne.votes.length / totalVotes) * 100);
+    let optionTwoPerc = convertToPercentage((question.optionTwo.votes.length / totalVotes) * 100);
+    return {
+      question,
+      author,
+      answer,
+      totalVotes,
+      optionOnePerc,
+      optionTwoPerc,
+      users,
+      authedUser,
+      invalidQuestion
+    }
+  }else{
+    return{
+      invalidQuestion
+    }
   }
 };
 
